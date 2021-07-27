@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+// const errorHandler = require("../middlewares/error-handler.middleware");
 const fs = require("fs");
 
 const pathRouter = `${__dirname}`;
@@ -21,5 +22,7 @@ router.get("*", (req, res) => {
   res.status(404);
   res.send({ error: "Not found" });
 });
+
+// router.use(errorHandler);
 
 module.exports = router; 
