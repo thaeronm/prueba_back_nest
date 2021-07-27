@@ -1,16 +1,18 @@
 const Error = (error, req, res, next) => {
   
-  if (e instanceof Application) {
-    console.error(e.name + ': ' + e.message)
+  if (error instanceof Application) {
+    console.error(`${error.name}: ${error.message}`)
   }
 
-  if (e instanceof EvalError) {
-    console.error(e.name + ': ' + e.message)
+  if (error instanceof EvalError) {
+    console.error(`${error.name}: ${error.message}`)
   }
 
-  if (e instanceof EvalError) {
-    console.error(e.name + ': ' + e.message)
+  if (error instanceof EvalError) {
+    console.error(`${error.name}: ${error.message}`)
   }
+
+  return res.send('error');
 };
 
 module.exports = Error;
