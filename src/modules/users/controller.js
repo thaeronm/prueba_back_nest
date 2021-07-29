@@ -1,24 +1,37 @@
 /**
- * Controller
- * 
- * Desde aqui se manejaran las rutas del sistema y la inyeccion de los
- * middlewares en las diferentes rutas para las validaciones de los datos,
- * manejo de respuestas, autenticacion, etc.
+ * Controllers
+ *
+ * Desde aqui manejamos los servicios de los diferentes modulos
  */
 
-const express = require('express');
-const router = express.Router();
+// const service = require('./service');
 
-const service = require('./service');
+const controller = {};
 
-router.get('/', service.findAll);
+controller.findAll = async (req, res, next) => {
+  // const body = await val.create(req.body);
+  // req.data = await service.findAll();
+  return next();
+};
 
-router.get('/:id', service.findOne);
+controller.findOne = async (req, res, next) => {
+  // req.data = await service.findOne();
+  return next();
+};
 
-router.post('/', service.create);
+controller.create = async (req, res, next) => {
+  // req.data = await service.create();
+  return next();
+};
 
-router.patch('/:id', service.update);
+controller.update = async (req, res, next) => {
+  req.data = await service.update();
+  return next();
+};
 
-router.delete('/:id', service.delete);
+controller.delete = async (req, res, next) => {
+  // req.data = await service.delete();
+  return next();
+};
 
-module.exports = router;
+module.exports = controller;
